@@ -2,42 +2,12 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
-	"strings"
 	"time"
 
-	"github.com/pootwaddle/date"
+	"github.com/pootwaddle/dadjoke"
 	"github.com/pootwaddle/ljemail"
 )
-
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
-type fortune struct {
-	today         time.Time
-	jDay          int
-	sysYear       int
-	yrMod         int
-	fileLine      int
-	linesInFile   int
-	todaysFortune string
-}
-
-func (a *fortune) calc_line(t time.Time) int {
-	a.today = t
-	a.jDay = date.JDay(t)
-	fmt.Println("jDay is ", a.jDay)
-	fmt.Println("SysYear(t) is ", date.SysYear(t))
-	a.sysYear = date.SysYear(t)
-	a.yrMod = date.SysYear(t) % 5
-	fmt.Println("yr mod is ", a.yrMod)
-	a.fileLine = (a.yrMod * 365) + a.yrMod + a.jDay - 1
-	return a.fileLine
-}
 
 func main() {
 
@@ -46,52 +16,10 @@ func main() {
 		Control ljemail.EmailControl
 	)
 
-	/* test calc_line
-
-	   t := time.Date(2016, time.January, 1, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	   t = time.Date(2016, time.December, 31, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	   t = time.Date(2017, time.January, 1, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	   t = time.Date(2017, time.December, 31, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	   t = time.Date(2018, time.January, 1, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	   t = time.Date(2018, time.December, 31, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	   t = time.Date(2019, time.January, 1, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	   t = time.Date(2019, time.December, 31, 15, 0, 0, 0, time.Local)
-	   fmt.Println(t)
-	   fmt.Println(calc_line(t))
-	*/
-
-	f := fortune{}
-
-	ft := f.calc_line(time.Now())
-
-	fmt.Println(ft)
-
-	raw, err := ioutil.ReadFile("c:/autojob/fortune.dat")
-	check(err)
-	str := string(raw)
-	linesArray := strings.Split(str, "\r\n")
-
-	f.todaysFortune = ""
-	f.linesInFile = len(linesArray)
-
-	if ft < len(linesArray) {
-		f.todaysFortune = linesArray[ft]
-	} else {
-		f.todaysFortune = "End of file"
+	joke, err := dadjoke.NewJokes("c:/autojob/fortune.dat")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
 	}
 
 	Control.From = "bjarvis@laughingj.com"
@@ -102,7 +30,7 @@ func main() {
 	Control.ProgName = ""
 	Control.Layout = ""
 	Control.InputFile = "c:/autojob/fortune.dat"
-	Control.Subject = f.todaysFortune
+	Control.Subject = joke.DadJokeOfTheDay(time.Now())
 
 	//logFile
 	logFileName := ljemail.MailFileName()
@@ -115,19 +43,22 @@ func main() {
 
 	ljemail.EmailHeaders(logFile, Control)
 
-	logFile.WriteString("<p>" + f.todaysFortune + "</p>\n")
+	logFile.WriteString("<p>" + joke.DadJokeOfTheDay(time.Now()) + "</p>\n")
 
-	logFile.WriteString("<table>")
-	logFile.WriteString(fmt.Sprintf("<tr><td>Today's date</td><td>%s</td></tr>", f.today))
-	logFile.WriteString(fmt.Sprintf("<tr><td>Julian Day</td><td>%d</td></tr>", f.jDay))
-	logFile.WriteString(fmt.Sprintf("<tr><td>sysYear</td><td>%d</td></tr>", f.sysYear))
-	logFile.WriteString(fmt.Sprintf("<tr><td>yrMod (5)</td><td>%d</td></tr>", f.yrMod))
-	logFile.WriteString(fmt.Sprintf("<tr><td>file line</td><td>%d</td></tr>", f.fileLine))
-	logFile.WriteString(fmt.Sprintf("<tr><td>lines in file</td><td>%d</td></tr>", f.linesInFile))
-	logFile.WriteString(fmt.Sprintf("<tr><td>years of</td><td>%d</td></tr>", f.linesInFile/365))
-	logFile.WriteString("</table>")
-	logFile.WriteString("</body>\n</html>\n")
+	logFile.WriteString("<table>\n")
+	logFile.WriteString(fmt.Sprintf("<tr><td>Today's date</td><td>%s</td></tr>\n", joke.Today))
+	logFile.WriteString(fmt.Sprintf("<tr><td>Julian Day</td><td>%d</td></tr>\n", joke.JDay))
+	logFile.WriteString(fmt.Sprintf("<tr><td>sysYear</td><td>%d</td></tr>\n", joke.SysYear))
+	logFile.WriteString(fmt.Sprintf("<tr><td>yrMod (5)</td><td>%d</td></tr>\n", joke.YrMod))
+	logFile.WriteString(fmt.Sprintf("<tr><td>file line</td><td>%d</td></tr>\n", joke.FileLine))
+	logFile.WriteString(fmt.Sprintf("<tr><td>lines in file</td><td>%d</td></tr>\n", joke.LinesInFile))
+	logFile.WriteString(fmt.Sprintf("<tr><td>years of</td><td>%d</td></tr>\n", joke.LinesInFile/365))
+	logFile.WriteString(fmt.Sprintf("<tr><td>extra lines : </td><td>%d</td></tr>\n", joke.LinesInFile-366*(joke.LinesInFile/365)))
+	logFile.WriteString("</table>\n")
 	logFile.Sync()
 	//	ljemail.Footer(logFile)
+
+	logFile.WriteString("</body>\n</html>\n")
+	logFile.Close()
 	fmt.Printf("Done\r\n")
 }

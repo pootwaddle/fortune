@@ -1,0 +1,8 @@
+github.com/pootwaddle/dadjoke v0.0.0-20210501203514-ffbb185842a4 h1:IUChPYZZgbR20F+j+3uLubhWnFKJ5LGK0pxME6wsAJk=
+github.com/pootwaddle/dadjoke v0.0.0-20210501203514-ffbb185842a4/go.mod h1:Kl37Nf9D2cCL5cm73oRDsOq3XuyiKut7DHDqgSRCfn4=
+github.com/pootwaddle/date v0.0.0-20210501183301-f0c2eceb82a0 h1:TPRcrkvpGnZsLTGn5UOR/Zt9O9g7gNsbl9mi687OX7Q=
+github.com/pootwaddle/date v0.0.0-20210501183301-f0c2eceb82a0/go.mod h1:i8BTJXNPfHNDarS/zH8ZUX1TgWGFhz6cyvXBC2VoqRc=
+github.com/pootwaddle/dayplus v0.0.0-20210414223251-b64d6eda2072 h1:0Kz8Qu3d6guypG2pMqozhL+hhKP8Ds0TLcCKLXv6jl8=
+github.com/pootwaddle/dayplus v0.0.0-20210414223251-b64d6eda2072/go.mod h1:AmzViK8PsFr1D2zLNgkQ/Z4EIqHFpy9WtmIB3dxG9rk=
+github.com/pootwaddle/ljemail v0.0.0-20210501204011-ed685bac10d6 h1:utPSaISAnv8+k4OssyAdyj79toZHeN5XrKGjyxWTQiI=
+github.com/pootwaddle/ljemail v0.0.0-20210501204011-ed685bac10d6/go.mod h1:53gQW4MNGY+epyoENsNTYFKuks/wMcu6cwrjkNBSOEI=

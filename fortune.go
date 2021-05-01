@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/pootwaddle/dadjoke"
+	"github.com/pootwaddle/dayplus"
 	"github.com/pootwaddle/ljemail"
 )
 
@@ -54,6 +55,7 @@ func main() {
 	logFile.WriteString(fmt.Sprintf("<tr><td>lines in file</td><td>%d</td></tr>\n", joke.LinesInFile))
 	logFile.WriteString(fmt.Sprintf("<tr><td>years of</td><td>%d</td></tr>\n", joke.LinesInFile/365))
 	logFile.WriteString(fmt.Sprintf("<tr><td>extra lines : </td><td>%d</td></tr>\n", joke.LinesInFile-366*(joke.LinesInFile/365)))
+	logFile.WriteString(fmt.Sprintf("<tr><td>Today is Day + %d", dayplus.Days(2021, 03, 18, time.Now())))
 	logFile.WriteString("</table>\n")
 	logFile.Sync()
 	//	ljemail.Footer(logFile)

@@ -1,9 +1,7 @@
 github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
 github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
-github.com/pootwaddle/dadjoke v0.0.2 h1:+XMf5wGztp2Yvu3PjGmOKp9LpyG958fg3oXQaCRkBqs=
-github.com/pootwaddle/dadjoke v0.0.2/go.mod h1:OycIAH2HUVA3zZRIMBh4S0xEbBmaPIhd/YMBgsHl9lQ=
-github.com/pootwaddle/dadjoke v0.0.3 h1:54bpR7r2MLwjZEvNO4hRvHdeuSvqlbx09l8f0WwmEXM=
-github.com/pootwaddle/dadjoke v0.0.3/go.mod h1:OycIAH2HUVA3zZRIMBh4S0xEbBmaPIhd/YMBgsHl9lQ=
+github.com/pootwaddle/dadjoke v0.0.4 h1:qorsOlgaa1G/BSAJ/dyMu86yON0LclqMS9ASR3CP+I8=
+github.com/pootwaddle/dadjoke v0.0.4/go.mod h1:ilrwF/j/a8RZET/SUNBEbq0a8rpFN0AK0J8BRZyLlRg=
 github.com/pootwaddle/date v0.0.1 h1:7eMAJZrSU+XiSMeRQWIumu2Nc6sdcH0h5J3JHNQRZOw=
 github.com/pootwaddle/date v0.0.1/go.mod h1:Uhpyuzo0neWJkJTwUTyjEhEUfzGx7kQyJQpIxu1Ak3o=
 github.com/pootwaddle/dayplus v0.0.1 h1:BZkm2llrzg4bohSTl0h3yBFzMSG8tKKQNel9mDMavgg=

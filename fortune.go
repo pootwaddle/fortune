@@ -8,6 +8,7 @@ import (
 	"github.com/pootwaddle/dadjoke"
 	"github.com/pootwaddle/dayplus"
 	"github.com/pootwaddle/ljemail"
+	"github.com/pootwaddle/shift"
 )
 
 func main() {
@@ -48,6 +49,7 @@ func main() {
 
 	logFile.WriteString("<table>\n")
 	logFile.WriteString(fmt.Sprintf("<tr><td>Today's date</td><td>%s</td></tr>\n", joke.Today))
+	logFile.WriteString(fmt.Sprintf("<tr><td>Today's FD Shift is:</td><td>%s</td></tr>\n", shift.GetShift(time.Now())))
 	logFile.WriteString(fmt.Sprintf("<tr><td>Julian Day</td><td>%d</td></tr>\n", joke.JDay))
 	logFile.WriteString(fmt.Sprintf("<tr><td>sysYear</td><td>%d</td></tr>\n", joke.SysYear))
 	logFile.WriteString(fmt.Sprintf("<tr><td>yrMod (8)</td><td>%d</td></tr>\n", joke.YrMod))

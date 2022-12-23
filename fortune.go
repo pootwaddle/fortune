@@ -52,7 +52,7 @@ func main() {
 	logFile.WriteString(fmt.Sprintf("<tr><td>Today's FD Shift is:</td><td>%s</td></tr>\n", shift.GetShift(time.Now())))
 	logFile.WriteString(fmt.Sprintf("<tr><td>Julian Day</td><td>%d</td></tr>\n", joke.JDay))
 	logFile.WriteString(fmt.Sprintf("<tr><td>sysYear</td><td>%d</td></tr>\n", joke.SysYear))
-	logFile.WriteString(fmt.Sprintf("<tr><td>yrMod (8)</td><td>%d</td></tr>\n", joke.YrMod))
+	logFile.WriteString(fmt.Sprintf("<tr><td>yrMod (10)</td><td>%d</td></tr>\n", joke.YrMod))
 	logFile.WriteString(fmt.Sprintf("<tr><td>file line</td><td>%d</td></tr>\n", joke.FileLine))
 	logFile.WriteString(fmt.Sprintf("<tr><td>lines in file</td><td>%d</td></tr>\n", joke.LinesInFile))
 	logFile.WriteString(fmt.Sprintf("<tr><td>years of</td><td>%d</td></tr>\n", joke.LinesInFile/366))

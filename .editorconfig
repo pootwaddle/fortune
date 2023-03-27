@@ -12,6 +12,12 @@ trim_trailing_whitespace = true
 max_line_length = off
 trim_trailing_whitespace = false
 
+[*.cs]
+indent_size = 4
+
+[*.py]
+indent_size = 4
+
 [*.go]
 charset = utf-8
 indent_style = tab

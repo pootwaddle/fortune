@@ -1,6 +1,6 @@
 module github.com/pootwaddle/fortune
 
-go 1.19
+go 1.20
 
 require (
 	github.com/pootwaddle/dadjoke v0.0.5

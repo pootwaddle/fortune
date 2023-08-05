@@ -27,7 +27,7 @@ func main() {
 	Control.From = "bjarvis@laughingj.com"
 	Control.ReplyTo = "bjarvis@laughingj.com"
 	Control.Recip = "bjarvis@laughingj.com"
-	Control.CCRecip = "pootwaddle@pootwaddle.com"
+	Control.CCRecip = "pootwaddle88@gmail.com"
 	Control.BCCRecip = ""
 	Control.ProgName = ""
 	Control.Layout = ""

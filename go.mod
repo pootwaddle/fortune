@@ -3,7 +3,7 @@ module github.com/pootwaddle/fortune
 go 1.20
 
 require (
-	github.com/pootwaddle/dadjoke v0.0.6
+	github.com/pootwaddle/dadjoke v0.0.10
 	github.com/pootwaddle/dayplus v0.0.2
 	github.com/pootwaddle/ljemail v0.0.6
 	github.com/pootwaddle/shift v0.0.4

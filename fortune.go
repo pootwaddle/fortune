@@ -60,6 +60,7 @@ func main() {
 	logFile.WriteString(fmt.Sprintf("<tr><td>2020/09/19 - Dad passed+</td><td>%d</td></tr>\n", int(dayplus.Days(2020, 9, 19, time.Now()))))
 	logFile.WriteString(fmt.Sprintf("<tr><td>2021/03/18 - Transplant+</td><td>%d</td></tr>\n", int(dayplus.Days(2021, 3, 18, time.Now()))))
 	logFile.WriteString(fmt.Sprintf("<tr><td>2021/09/20 - Dad Interred+</td><td>%d</td></tr>\n", int(dayplus.Days(2021, 9, 20, time.Now()))))
+	logFile.WriteString(fmt.Sprintf("<tr><td>2025/03/20 - Mom passed</td><td>%d</td></tr>\n", int(dayplus.Days(2025, 3, 20, time.Now()))))
 	logFile.WriteString("</table>\n")
 	logFile.Sync()
 	//	ljemail.Footer(logFile)

@@ -6,7 +6,7 @@ require (
 	github.com/pootwaddle/dadjoke v0.0.12
 	github.com/pootwaddle/dayplus v0.0.3
 	github.com/pootwaddle/ljemail v0.0.11
-	github.com/pootwaddle/shift v0.0.5
+	github.com/pootwaddle/shift v0.0.6
 )
 
 require (

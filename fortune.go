@@ -9,44 +9,57 @@ import (
 	"github.com/pootwaddle/dayplus"
 	"github.com/pootwaddle/ljemail"
 	"github.com/pootwaddle/shift"
+	"github.com/pootwaddle/slogger"
 )
 
 func main() {
-
 	var (
 		logFile *os.File
 		Control ljemail.EmailControl
 	)
 
+	slogger.Info("👋 Starting daily dad joke email job")
+
 	joke, err := dadjoke.NewJokes("c:/autojob/fortune.dat")
 	if err != nil {
-		fmt.Println(err)
+		slogger.Errorf("Could not load dad joke data: %v", err)
 		os.Exit(1)
 	}
+	slogger.Info("✅ Loaded dad joke data")
 
 	Control.From = "bjarvis@laughingj.com"
 	Control.ReplyTo = "bjarvis@laughingj.com"
 	Control.Recip = "bjarvis@laughingj.com"
 	Control.CCRecip = "pootwaddle88@gmail.com"
 	Control.BCCRecip = ""
-	Control.ProgName = ""
+	Control.ProgName = "autojob"
 	Control.Layout = ""
 	Control.InputFile = "c:/autojob/fortune.dat"
 	Control.Subject = joke.DadJokeOfTheDay(time.Now())
 
-	//logFile
 	logFileName := ljemail.MailFileName()
 	logFile, err = os.Create(logFileName)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Unable to create %s\r\n", logFileName)
+		// STRUCTURED LOG (fields as JSON in file, if file logging enabled)
+		slogger.GetLogger().Error("Unable to create output file",
+			"file", logFileName,
+			"err", err,
+		)
 		return
 	}
 	defer logFile.Close()
 
+	// STRUCTURED LOG (fields as JSON in file)
+	slogger.GetLogger().Info("Created output file",
+		"file", logFileName,
+	)
+
 	ljemail.EmailHeaders(logFile, Control)
+	slogger.Debug("Wrote email headers")
 
 	logFile.WriteString("<p>" + joke.DadJokeOfTheDay(time.Now()) + "</p>\n")
 
+	slogger.Debug("Writing main joke and daily stats to email")
 	logFile.WriteString("<table>\n")
 	logFile.WriteString(fmt.Sprintf("<tr><td>Today's date</td><td>%s</td></tr>\n", joke.Today))
 	logFile.WriteString(fmt.Sprintf("<tr><td>Today's FD Shift is:</td><td>%s</td></tr>\n", shift.GetShift(time.Now())))
@@ -63,9 +76,13 @@ func main() {
 	logFile.WriteString(fmt.Sprintf("<tr><td>2025/03/20 - Mom passed</td><td>%d</td></tr>\n", int(dayplus.Days(2025, 3, 20, time.Now()))))
 	logFile.WriteString("</table>\n")
 	logFile.Sync()
-	//	ljemail.Footer(logFile)
 
+	// ljemail.Footer(logFile)
 	logFile.WriteString("</body>\n</html>\n")
-	logFile.Close()
-	fmt.Printf("Done\r\n")
+
+	slogger.Info("✅ Wrote complete email HTML")
+	// STRUCTURED LOG (fields as JSON in file)
+	slogger.GetLogger().Info("✅ Daily dad joke email job completed successfully",
+		"output_file", logFileName,
+	)
 }

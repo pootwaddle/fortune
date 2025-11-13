@@ -74,11 +74,12 @@ func main() {
 	//	logFile.WriteString(fmt.Sprintf("<tr><td>2021/03/18 - Transplant+</td><td>%d</td></tr>\n", int(dayplus.Days(2021, 3, 18, time.Now()))))
 	//	logFile.WriteString(fmt.Sprintf("<tr><td>2021/09/20 - Dad Interred+</td><td>%d</td></tr>\n", int(dayplus.Days(2021, 9, 20, time.Now()))))
 	//	logFile.WriteString(fmt.Sprintf("<tr><td>2025/03/20 - Mom passed</td><td>%d</td></tr>\n", int(dayplus.Days(2025, 3, 20, time.Now()))))
+	logFile.WriteString(fmt.Sprintf("<tr><td>1982/06/18 - Joined LFD+</td><td>%s</td></tr>\n", dayplus.ElapsedTime("2020/09/19")))
 	logFile.WriteString(fmt.Sprintf("<tr><td>2020/09/19 - Dad passed+</td><td>%s</td></tr>\n", dayplus.ElapsedTime("2020/09/19")))
 	logFile.WriteString(fmt.Sprintf("<tr><td>2021/03/18 - Transplant+</td><td>%s</td></tr>\n", dayplus.ElapsedTime("2021/03/18")))
 	logFile.WriteString(fmt.Sprintf("<tr><td>2021/09/20 - Dad Interred+</td><td>%s</td></tr>\n", dayplus.ElapsedTime("2021/09/20")))
 	logFile.WriteString(fmt.Sprintf("<tr><td>2025/03/20 - Mom passed</td><td>%s</td></tr>\n", dayplus.ElapsedTime("2025/03/20")))
-	logFile.WriteString(fmt.Sprintf("<tr><td>2026/01/31 - Retired!</td><td>%s</td></tr>\n", dayplus.ElapsedTime("2026/01/31")))
+	logFile.WriteString(fmt.Sprintf("<tr><td>2025/12/31 - Retired!</td><td>%s</td></tr>\n", dayplus.ElapsedTime("2026/01/31")))
 	logFile.WriteString("</table>\n")
 	logFile.Sync()
 

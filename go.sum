@@ -10,5 +10,7 @@ github.com/pootwaddle/ljemail v0.0.21 h1:G9zql+iPhiCXXZvrTInnluTfSDbf1hQklzQeWA7
 github.com/pootwaddle/ljemail v0.0.21/go.mod h1:8r8W/XMFSbZaJKxlKf5PuSCzL6pqH5bqo/f8TA8MLy8=
 github.com/pootwaddle/shift v0.0.8 h1:80Zcpoey6yEqAMCbvPdpYNbi7Kr5yARYqLDwFdMPOxE=
 github.com/pootwaddle/shift v0.0.8/go.mod h1:jwuiTMBnO606VqHhmnzVgwWXmj5Lrt4PXeJllBRDcok=
+github.com/pootwaddle/shift v0.0.10 h1:QCSLaJUNRhMDVCuA7Xwq9iCX9p6hCN/y3DA0S68gito=
+github.com/pootwaddle/shift v0.0.10/go.mod h1:jwuiTMBnO606VqHhmnzVgwWXmj5Lrt4PXeJllBRDcok=
 github.com/pootwaddle/slogger v0.0.26 h1:zWoH0x6D6Sm2Ksp1KLgtKwWb1TeRyOPv0J8G+9KuJ38=
 github.com/pootwaddle/slogger v0.0.26/go.mod h1:PrOf+2KEzHh8SG9Qxhi3SkoLMciHVogdFr0m9D4Ssno=

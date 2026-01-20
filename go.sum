@@ -8,8 +8,6 @@ github.com/pootwaddle/dayplus v0.0.11 h1:qqnQ0qKRTy6KSIH1L1/tvMDlaZlt09xyfcMjU9I
 github.com/pootwaddle/dayplus v0.0.11/go.mod h1:NI/Y4Kp8PmoGjrP/BkZcEMZ4Vg42m0DPq8bnhsTQmWg=
 github.com/pootwaddle/ljemail v0.0.21 h1:G9zql+iPhiCXXZvrTInnluTfSDbf1hQklzQeWA77iGI=
 github.com/pootwaddle/ljemail v0.0.21/go.mod h1:8r8W/XMFSbZaJKxlKf5PuSCzL6pqH5bqo/f8TA8MLy8=
-github.com/pootwaddle/shift v0.0.8 h1:80Zcpoey6yEqAMCbvPdpYNbi7Kr5yARYqLDwFdMPOxE=
-github.com/pootwaddle/shift v0.0.8/go.mod h1:jwuiTMBnO606VqHhmnzVgwWXmj5Lrt4PXeJllBRDcok=
 github.com/pootwaddle/shift v0.0.10 h1:QCSLaJUNRhMDVCuA7Xwq9iCX9p6hCN/y3DA0S68gito=
 github.com/pootwaddle/shift v0.0.10/go.mod h1:jwuiTMBnO606VqHhmnzVgwWXmj5Lrt4PXeJllBRDcok=
 github.com/pootwaddle/slogger v0.0.26 h1:zWoH0x6D6Sm2Ksp1KLgtKwWb1TeRyOPv0J8G+9KuJ38=

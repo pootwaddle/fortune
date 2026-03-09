@@ -20,7 +20,7 @@ func main() {
 
 	slogger.Info("👋 Starting daily dad joke email job")
 
-	joke, err := dadjoke.NewJokes("c:/autojob/fortune.dat")
+	joke, err := dadjoke.NewJokes(os.Getenv("DADFILE"))
 	if err != nil {
 		slogger.Errorf("Could not load dad joke data: %v", err)
 		os.Exit(1)
@@ -34,7 +34,7 @@ func main() {
 	Control.BCCRecip = ""
 	Control.ProgName = "autojob"
 	Control.Layout = ""
-	Control.InputFile = "c:/autojob/fortune.dat"
+	Control.InputFile = os.Getenv("DADFILE")
 	Control.Subject = joke.DadJokeOfTheDay(time.Now())
 
 	logFileName := ljemail.MailFileName()

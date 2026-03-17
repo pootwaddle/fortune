@@ -12,5 +12,5 @@ require (
 
 require (
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/pootwaddle/date v0.0.25 // indirect
+	github.com/pootwaddle/date v0.0.26 // indirect
 )

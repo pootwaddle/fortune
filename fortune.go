@@ -27,12 +27,12 @@ func main() {
 	}
 	slogger.Info("✅ Loaded dad joke data")
 
-	Control.From = "bjarvis@laughingj.com"
+	Control.From = "fortune@laughingj.com"
 	Control.ReplyTo = "bjarvis@laughingj.com"
 	Control.Recip = "bjarvis@laughingj.com"
 	Control.CCRecip = "pootwaddle88@gmail.com"
 	Control.BCCRecip = ""
-	Control.ProgName = "autojob"
+	Control.ProgName = "fortune"
 	Control.Layout = ""
 	Control.InputFile = os.Getenv("DADFILE")
 	Control.Subject = joke.DadJokeOfTheDay(time.Now())

@@ -89,4 +89,5 @@ func main() {
 	slogger.GetLogger().Info("✅ Daily dad joke email job completed successfully",
 		"output_file", logFileName,
 	)
+	slogger.Donef("dad joke email written (file line %d)", joke.FileLine)
 }

@@ -6,9 +6,9 @@ github.com/pootwaddle/date v0.0.27 h1:f2oo3vxcdD8fM1nyokoqJVc9FGltC8dM3ZHEV23LO2
 github.com/pootwaddle/date v0.0.27/go.mod h1:YVmmSQNRyzIMN5+kOqXBxrrGimJHvMJCA8MxIc7vEHk=
 github.com/pootwaddle/dayplus v0.0.16 h1:zzVQHh98h5DnqwkFqZFenbhQtyU32hoGnuJLEtjchOY=
 github.com/pootwaddle/dayplus v0.0.16/go.mod h1:EW+UrAws8WySXRuvjIqweA0rZMELAycoTIYkIqt2s5I=
-github.com/pootwaddle/ljemail v0.0.29 h1:GePpxWOiTFA78eXR24eC0or5mbBhqjrkCk9x9RQUzB8=
-github.com/pootwaddle/ljemail v0.0.29/go.mod h1:q05oeA47w++sPjjs/iNF2lxfwSE+emNFf3TRxrJYjCs=
+github.com/pootwaddle/ljemail v0.0.30 h1:XO/72a38B6MzY1BfH5yNBlEzokWvKEfa9dOj9KozBGo=
+github.com/pootwaddle/ljemail v0.0.30/go.mod h1:q05oeA47w++sPjjs/iNF2lxfwSE+emNFf3TRxrJYjCs=
 github.com/pootwaddle/shift v0.0.15 h1:mTgMR3KkcZWDXPL9G7PsUMUwlc+PAj/ze3jluvMK73M=
 github.com/pootwaddle/shift v0.0.15/go.mod h1:oNxNg+zmjrWyefVEQDa525Ol4Bo6/DtFuSO96+Ci/7c=
-github.com/pootwaddle/slogger v0.0.31 h1:7CCS1oVa3aEuQ2iP1fLS0ifsIBAeynISBEbk+XR6vQ0=
-github.com/pootwaddle/slogger v0.0.31/go.mod h1:SUBUK3ICahvz3uJs7e4reJg8Nu//U1OR69oxD+Swy5A=
+github.com/pootwaddle/slogger v0.0.32 h1:1mgtIpklpoDf/cusquTuJjliFnzkN6GMnepoG/NH/Zc=
+github.com/pootwaddle/slogger v0.0.32/go.mod h1:SUBUK3ICahvz3uJs7e4reJg8Nu//U1OR69oxD+Swy5A=
